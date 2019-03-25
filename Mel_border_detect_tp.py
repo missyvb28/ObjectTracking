@@ -68,12 +68,13 @@ def translate(value, leftMin, leftMax, rightMin, rightMax):
 ap = argparse.ArgumentParser()
 ap.add_argument("-b", "--buffer", type=int, default=64,
 	help="max buffer size")
-# if using a Mac, use command line switch -m or --mac
-ap.add_argument("-m", "--mac", type=str, default=" ",)
+# if using a Mac, use command line switch -s or --sys
+#need secondary argument to say if Mac or Windows OS
+ap.add_argument("-s", "--sys", type=str, default="",)
 args = vars(ap.parse_args())
 
-if args.get("mac", True):
-	print("see mac")
+if args.get("sys", True):
+	print("see arg")
 
 
 # define the lower and upper boundaries of the green duct tape and the puck
